@@ -1,5 +1,5 @@
-/******************************************************************************
- *     --------±³°ü-------------
+ï»¿/******************************************************************************
+ *     --------èƒŒåŒ…-------------
  *  Compilation:  javac Bag.java
  *  Execution:    java Bag < input.txt
  *  Dependencies: StdIn.java StdOut.java
@@ -30,8 +30,8 @@
 
 package edu.princeton.cs.algs4;
 
-import java.util.Iterator;     //µ¼Èëµü´úÆ÷
-import java.util.NoSuchElementException;       //µ¼ÈëÒì³£
+import java.util.Iterator;     //å¯¼å…¥è¿­ä»£å™¨
+import java.util.NoSuchElementException;       //å¯¼å…¥å¼‚å¸¸
 
 /**
  *  The {@code Bag} class represents a bag (or multiset) of 
@@ -53,17 +53,17 @@ import java.util.NoSuchElementException;       //µ¼ÈëÒì³£
  *  @param <Item> the generic type of an item in this bag
  */
 public class Bag<Item> implements Iterable<Item> {
-    private Node<Item> first;    // beginning of bag     ´´½¨Ò»¸ö°ü
-    private int n;               // number of elements in bag   ±³°üÖĞÔªËØµÄ¸öÊı
+    private Node<Item> first;    // beginning of bag     åˆ›å»ºä¸€ä¸ªåŒ…
+    private int n;               // number of elements in bag   èƒŒåŒ…ä¸­å…ƒç´ çš„ä¸ªæ•°
 
-    // helper linked list class       ¸¨ÖúÁ´±íÀà
+    // helper linked list class       è¾…åŠ©é“¾è¡¨ç±»
     private static class Node<Item> {
         private Item item;
         private Node<Item> next;
     }
 
     /**
-     * Initializes an empty bag.    ³õÊ¼»¯Ò»¸ö¿Õ±³°ü
+     * Initializes an empty bag.    åˆå§‹åŒ–ä¸€ä¸ªç©ºèƒŒåŒ…
      */
     public Bag() {
         first = null;
@@ -71,7 +71,7 @@ public class Bag<Item> implements Iterable<Item> {
     }
 
     /**
-     * Returns true if this bag is empty.   Èç¹ûÕâ¸ö±³°üÊÇ¿ÕµÄ¾Í·Å»Øtrue
+     * Returns true if this bag is empty.   å¦‚æœè¿™ä¸ªèƒŒåŒ…æ˜¯ç©ºçš„å°±æ”¾å›true
      *
      * @return {@code true} if this bag is empty;
      *         {@code false} otherwise
@@ -81,7 +81,7 @@ public class Bag<Item> implements Iterable<Item> {
     }
 
     /**
-     * Returns the number of items in this bag.  ·µ»Ø±³°üÀïµÄÔªËØ¸öÊı
+     * Returns the number of items in this bag.  è¿”å›èƒŒåŒ…é‡Œçš„å…ƒç´ ä¸ªæ•°
      *
      * @return the number of items in this bag
      */
@@ -90,7 +90,7 @@ public class Bag<Item> implements Iterable<Item> {
     }
 
     /**
-     * Adds the item to this bag.   Ïò±³°üÖĞÌí¼ÓÒ»¸öÔªËØ
+     * Adds the item to this bag.   å‘èƒŒåŒ…ä¸­æ·»åŠ ä¸€ä¸ªå…ƒç´ 
      *
      * @param  item the item to add to this bag
      */
@@ -105,14 +105,14 @@ public class Bag<Item> implements Iterable<Item> {
 
     /**
      * Returns an iterator that iterates over the items in this bag in arbitrary order.
-     *   ·µ»ØÒ»¸öµü´úÆ÷±éÀúÕâ¸ö´ü×ÓµÄÎïÆ·ÈÎÒâË³Ğò
+     *   è¿”å›ä¸€ä¸ªè¿­ä»£å™¨éå†è¿™ä¸ªè¢‹å­çš„ç‰©å“ä»»æ„é¡ºåº
      * @return an iterator that iterates over the items in this bag in arbitrary order
      */
     public Iterator<Item> iterator()  {
         return new ListIterator<Item>(first);  
     }
 
-    // an iterator, doesn't implement remove() since it's optional    Ò»¸öµü´úÆ÷,²»ÊµÏÖremove()ÒòÎªËüÊÇ¿ÉÑ¡µÄ
+    // an iterator, doesn't implement remove() since it's optional    ä¸€ä¸ªè¿­ä»£å™¨,ä¸å®ç°remove()å› ä¸ºå®ƒæ˜¯å¯é€‰çš„
     private class ListIterator<Item> implements Iterator<Item> {
         private Node<Item> current;
 
